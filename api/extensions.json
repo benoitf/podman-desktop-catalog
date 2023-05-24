@@ -121,9 +121,9 @@
       "keywords": ["OpenShift", "MicroShift"],
       "versions": [
         {
-          "version": "1.0.2",
+          "version": "1.0.3",
           "preview": false,
-          "ociUri": "quay.io/redhat-developer/openshift-local-extension:v1.0.2",
+          "ociUri": "quay.io/redhat-developer/openshift-local-extension:v1.0.3",
           "lastUpdated": "2023-05-17T00:00:00Z",
           "files": [
             {
