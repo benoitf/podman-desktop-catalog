@@ -19,7 +19,7 @@
           "files": [
             {
               "assetType": "icon",
-              "data": "https://registry.podman-desktop.io/api/extensions/redhat/redhat-authentication/0.0.1/icon.png"
+              "data": "https://registry.podman-desktop.io/api/extensions/redhat/redhat-authentication/0.0.5/icon.png"
             },
             {
               "assetType": "README",
