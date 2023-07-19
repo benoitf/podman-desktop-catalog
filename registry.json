@@ -32,7 +32,8 @@
             }
           ]
         }
-,
+      ]
+    },
     {
       "publisher": {
         "publisherName": "fbenoit",
@@ -65,6 +66,8 @@
             }
           ]
         }
+      ]
+    }
 ,
     {
       "publisher": {
@@ -98,6 +101,8 @@
             }
           ]
         }
+      ]
+      }
 ,        
         {
       "publisher": {
