@@ -5,7 +5,7 @@
         "publisherName": "fbenoit",
         "displayName": "Florent Benoit"
       },
-      "extensionName": "ext-a",
+      "extensionName": "extension-a",
       "displayName": "Extension A depends on Extension B",
       "shortDescription": "Extension A depends on Extension B",
       "license": "Apache-2.0",
@@ -39,7 +39,7 @@
         "publisherName": "fbenoit",
         "displayName": "Florent Benoit"
       },
-      "extensionName": "ext-b",
+      "extensionName": "extension-b",
       "displayName": "Extension B depends on Extension C",
       "shortDescription": "Extension B depends on Extension C",
       "license": "Apache-2.0",
@@ -74,7 +74,7 @@
         "publisherName": "fbenoit",
         "displayName": "Florent Benoit"
       },
-      "extensionName": "ext-c",
+      "extensionName": "extension-c",
       "displayName": "Extension C",
       "shortDescription": "Extension C",
       "license": "Apache-2.0",
