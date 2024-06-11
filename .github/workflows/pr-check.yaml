@@ -42,11 +42,16 @@ jobs:
 
                     echo "list of files inside the container"
                     cat ${CONTAINER_ID}.content
-                    if ! grep -q "extension/package.json" ${CONTAINER_ID}.content; then
-                      echo "The image ${i} does not include a mandatory README.md file"
-                      exit 1
+                    # if podman desktop extension
+                    if grep -q "extension/package.json" ${CONTAINER_ID}.content; then
+                      if ! grep -q "extension/README.md" ${CONTAINER_ID}.content; then
+                        echo "The image ${i} does not include a mandatory README.md file"
+                        exit 1
+                      fi
+                    elif grep -q "metadata.json" ${CONTAINER_ID}.content; then
+                      # docker desktop extension
+                      echo "skipping README check as it is a Docker Desktop extension"
                     fi
-                    echo "README.md file present in $i"
                   done
                 else 
                   echo "api/extensions.json removed, forbidden"
