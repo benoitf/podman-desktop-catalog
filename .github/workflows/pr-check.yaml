@@ -37,11 +37,16 @@ jobs:
                   do
                     echo "Verify image $i"
                     CONTAINER_ID=$(podman create -q $i)
+                    echo "container id is ${CONTAINER_ID}"
                     podman export ${CONTAINER_ID} | tar -t > ${CONTAINER_ID}.content
+
+                    echo "list of files inside the container"
+                    cat ${CONTAINER_ID}.content
                     if ! grep -q "extension/package.json" ${CONTAINER_ID}.content; then
                       echo "The image ${i} does not include a mandatory README.md file"
                       exit 1
                     fi
+                    echo "README.md file present in $i"
                   done
                 else 
                   echo "api/extensions.json removed, forbidden"
