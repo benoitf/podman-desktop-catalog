@@ -18,6 +18,7 @@
 name: pr-check
 
 on:
+  push:
   pull_request:
     branches:
       - gh-pages
@@ -35,7 +36,13 @@ jobs:
                   for i in `jq -r .extensions[].versions[].ociUri api/extensions.json`
                   do
                     echo "Verify image $i"
-                    podman pull -q $i
+                    CONTAINER_ID=$(podman create -q $i)
+                    podman export ${CONTAINER_ID} | tar -t > ${CONTAINER_ID}.content
+                    if ! grep -q "extension/package.json" ${CONTAINER_ID}.content)
+                    then
+                      echo "The image ${i} does not include a mandatory README.md file"
+                      exit 1
+                    fi
                   done
                 else 
                   echo "api/extensions.json removed, forbidden"
