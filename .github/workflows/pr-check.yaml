@@ -36,7 +36,7 @@ jobs:
                   for i in `jq -r .extensions[].versions[].ociUri api/extensions.json`
                   do
                     echo "Verify image $i"
-                    CONTAINER_ID=$(podman create -q $i)
+                    CONTAINER_ID=$(podman create -q --entrypoint sh $i)
                     echo "container id is ${CONTAINER_ID}"
                     podman export ${CONTAINER_ID} | tar -t > ${CONTAINER_ID}.content
 
