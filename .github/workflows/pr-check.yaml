@@ -38,7 +38,7 @@ jobs:
                     echo "Verify image $i"
                     CONTAINER_ID=$(podman create -q $i)
                     podman export ${CONTAINER_ID} | tar -t > ${CONTAINER_ID}.content
-                    if ! grep -q "extension/package.json" ${CONTAINER_ID}.content); then
+                    if ! grep -q "extension/package.json" ${CONTAINER_ID}.content; then
                       echo "The image ${i} does not include a mandatory README.md file"
                       exit 1
                     fi
